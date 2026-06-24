@@ -1,0 +1,9 @@
+[project]
+name = "camera-drift"
+version = "0.1.0"
+description = "摄像头偏移检测与关键区域自适应（基于单应估计）"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=2.4.6",
+    "opencv-python>=4.13.0.92",
+]
