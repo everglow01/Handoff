@@ -46,7 +46,7 @@ def main(argv: list[str] | None = None) -> int:
 
     # 需求1：偏移检测与告警（含 H 失败兜底）
     report = drift.evaluate(res, frame.shape, drift_thresh_px=args.drift_thresh)
-    tag = "⚠ 告警" if report.alarm else "正常"
+    tag = "[告警]" if report.alarm else "正常"
     print(f"[偏移] {tag}: {report.reason}")
     if report.ok:
         print(f"       最大角位移={report.max_disp_px:.1f}px 平均={report.mean_disp_px:.1f}px")
