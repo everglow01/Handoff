@@ -45,7 +45,7 @@ def calibrate(
     if descriptors is None or len(keypoints) == 0:
         # 低纹理（白墙/纯地面）参考帧可能一个角点都没有。不硬失败：
         # 仍存下参考帧，运行时走 ECC（基于强度、无需特征点）降级。
-        print("⚠ 参考帧 ORB 特征为 0（纹理过少）：将依赖 ECC 降级", file=sys.stderr)
+        print("[警告] 参考帧 ORB 特征为 0（纹理过少）：将依赖 ECC 降级", file=sys.stderr)
         keypoints, descriptors = [], np.empty((0, 32), dtype=np.uint8)
 
     return Calibration(
